@@ -1,0 +1,146 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo
+  namespace: default
+  uid: 4f146968-8621-4281-95aa-fbe63ff2cc6a
+  resourceVersion: '5105'
+  generation: 4
+  creationTimestamp: '2022-08-10T07:52:12Z'
+  labels:
+    app: demo
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+  managedFields:
+    - manager: kubectl-create
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-08-10T07:52:12Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+            f:spec:
+              f:containers:
+                k:{"name":"docker-example"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+    - manager: dashboard
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-08-10T07:57:30Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:replicas: {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-08-11T06:42:48Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      subresource: status
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: docker-example
+          image: timeless/docker-example
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 4
+  replicas: 3
+  updatedReplicas: 3
+  readyReplicas: 3
+  availableReplicas: 3
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-08-10T07:52:15Z'
+      lastTransitionTime: '2022-08-10T07:52:12Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "demo-75b47f64cb" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2022-08-11T06:42:48Z'
+      lastTransitionTime: '2022-08-11T06:42:48Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
