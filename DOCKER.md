@@ -10,6 +10,10 @@ npm i
 docker build . -t timeless/docker-example:latest
 ```
 
+```
+docker push timeless/docker-example:latest
+```
+
 ## Run
 
 ```
