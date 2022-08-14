@@ -7,7 +7,12 @@ npm i
 ## Build
 
 ```
-docker build . -t timeless/docker-example:latest
+docker build . -t timeless/docker-example:latest-armv64-v8
+```
+
+```
+docker buildx build -t timeless/docker-example:latest \
+  --platform linux/amd64,linux/arm64,linux/ppc64le --push .
 ```
 
 ## Run
