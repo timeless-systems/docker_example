@@ -15,6 +15,10 @@ docker buildx build -t timeless/docker-example:latest \
   --platform linux/amd64,linux/arm64,linux/ppc64le --push .
 ```
 
+```
+docker push timeless/docker-example:latest
+```
+
 ## Run
 
 ```
