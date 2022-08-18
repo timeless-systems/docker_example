@@ -21,7 +21,8 @@ kubectl -n kubernetes-dashboard create token admin-user
 ## Metric Server 
 ```
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.1/components.yaml
-```
+```dps
+
 
 kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.1/components.yaml
 

@@ -1,6 +1,9 @@
 # Tutorial seuqence
 
+
 install node
+    https://nodejs.org/en/
+    
 install npm packages ( npm i )
 
 
