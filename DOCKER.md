@@ -27,9 +27,17 @@ docker push timeless/docker-example:latest
 ## Run
 
 ```
-docker run -p 49160:8080 -d --name demo timeless/docker-example
+docker run -p 8080:8080 -d --name demo timeless/docker-example
 ```
 
+```
+docker run -d --name demo timeless/docker-example
+```
+
+Port Mapping
+```
+docker run -p 49160:8080 -d --name demo timeless/docker-example
+```
 ## Excercise
 
 Get container ID
@@ -70,7 +78,7 @@ docker ps
 
 Confirm that the app has stopped
 ```
-url -i localhost:8080/pid
+curl -i localhost:8080/pid
 ```
 
 ## Docker registry

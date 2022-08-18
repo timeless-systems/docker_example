@@ -1,4 +1,21 @@
 
+## run the docker-example
+```
+kubectl apply -f kubernetes/docker-example.yaml
+```
+
+```
+kubectl get deployments
+```
+
+```
+kubectl get services
+```
+
+```
+kubectl delete -f kubernetes/docker-example.yaml
+```
+
 ## Install the kubernetes dashboard
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
