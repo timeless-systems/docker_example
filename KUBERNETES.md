@@ -17,6 +17,11 @@ kubectl delete -f kubernetes/docker-example.yaml
 ```
 
 ## Install the kubernetes dashboard
+
+```
+https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop/
+```
+
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
 ```
